@@ -1,0 +1,312 @@
+-> Loaded 6 sample employees.
+
+--- Employee Payroll Management System ---
+1. Add Employee
+2. View All Employees
+3. Search Employee by ID
+4. Update Employee
+5. Delete Employee
+6. Calculate Salary for an Employee
+7. Generate Salary Slip for an Employee
+8. Run Payroll for All Employees
+9. Reports
+10. Exit
+Enter your choice: 
+[ Add Employee ]
+Select Type: 1. Full-Time  2. Part-Time  3. Contract
+Choice: Employee ID (e.g. EMP001): Name: Department: Email: Joining Date (YYYY-MM-DD): Basic Salary: HRA: DA: Bonus: PF Deduction: Employee added successfully!
+
+--- Employee Payroll Management System ---
+1. Add Employee
+2. View All Employees
+3. Search Employee by ID
+4. Update Employee
+5. Delete Employee
+6. Calculate Salary for an Employee
+7. Generate Salary Slip for an Employee
+8. Run Payroll for All Employees
+9. Reports
+10. Exit
+Enter your choice: 
+[ Add Employee ]
+Select Type: 1. Full-Time  2. Part-Time  3. Contract
+Choice: Employee ID (e.g. EMP001): Error: Employee ID already exists.
+
+--- Employee Payroll Management System ---
+1. Add Employee
+2. View All Employees
+3. Search Employee by ID
+4. Update Employee
+5. Delete Employee
+6. Calculate Salary for an Employee
+7. Generate Salary Slip for an Employee
+8. Run Payroll for All Employees
+9. Reports
+10. Exit
+Enter your choice: Enter Employee ID: Save to file? (y/n): ==================================================
+                  SALARY SLIP
+==================================================
+Slip No      : SLP-2026-EMP007
+Month / Year : SEPTEMBER 2026
+--------------------------------------------------
+Employee ID  : EMP007
+Name         : Test FT
+Type         : Full-Time
+Department   : IT
+--------------------------------------------------
+EARNINGS
+  Basic Salary          :   50,000.00
+  HRA                   :   10,000.00
+  DA                    :    5,000.00
+  Bonus                 :    5,000.00
+  Gross Salary          :   70,000.00
+--------------------------------------------------
+DEDUCTIONS
+  Provident Fund        :    6,000.00
+  Income Tax            :    7,000.00
+  Total Deductions      :   13,000.00
+--------------------------------------------------
+NET SALARY              :   57,000.00
+==================================================
+Generated on: 2026-09-24
+
+-> Salary slip successfully saved to slips/EMP007_SLP-2026-EMP007.txt
+
+--- Employee Payroll Management System ---
+1. Add Employee
+2. View All Employees
+3. Search Employee by ID
+4. Update Employee
+5. Delete Employee
+6. Calculate Salary for an Employee
+7. Generate Salary Slip for an Employee
+8. Run Payroll for All Employees
+9. Reports
+10. Exit
+Enter your choice: 
+[ Running Global Payroll ]
+--- Polymorphism Check (Runtime Dispatch) ---
+Full-Time -> 55000.00
+Full-Time -> 47500.00
+Part-Time -> 20000.00
+Part-Time -> 33750.00
+Contract -> 55000.00
+Contract -> 50000.00
+Full-Time -> 70000.00
+---------------------------------------------
+Total Payroll for 7 employees: ? 289,187.50
+Generate slips for everyone? (y/n): ==================================================
+                  SALARY SLIP
+==================================================
+Slip No      : SLP-2026-09-001
+Month / Year : SEPTEMBER 2026
+--------------------------------------------------
+Employee ID  : EMP001
+Name         : Priya Sharma
+Type         : Full-Time
+Department   : Engineering
+--------------------------------------------------
+EARNINGS
+  Basic Salary          :   40,000.00
+  HRA                   :    8,000.00
+  DA                    :    4,000.00
+  Bonus                 :    3,000.00
+  Gross Salary          :   55,000.00
+--------------------------------------------------
+DEDUCTIONS
+  Provident Fund        :    4,800.00
+  Income Tax            :    5,500.00
+  Total Deductions      :   10,300.00
+--------------------------------------------------
+NET SALARY              :   44,700.00
+==================================================
+Generated on: 2026-09-24
+
+-> Salary slip successfully saved to slips/EMP001_SLP-2026-09-001.txt
+==================================================
+                  SALARY SLIP
+==================================================
+Slip No      : SLP-2026-09-002
+Month / Year : SEPTEMBER 2026
+--------------------------------------------------
+Employee ID  : EMP002
+Name         : Rahul Gupta
+Type         : Full-Time
+Department   : HR
+--------------------------------------------------
+EARNINGS
+  Basic Salary          :   35,000.00
+  HRA                   :    7,000.00
+  DA                    :    3,500.00
+  Bonus                 :    2,000.00
+  Gross Salary          :   47,500.00
+--------------------------------------------------
+DEDUCTIONS
+  Provident Fund        :    4,200.00
+  Income Tax            :    2,375.00
+  Total Deductions      :    6,575.00
+--------------------------------------------------
+NET SALARY              :   40,925.00
+==================================================
+Generated on: 2026-09-24
+
+-> Salary slip successfully saved to slips/EMP002_SLP-2026-09-002.txt
+==================================================
+                  SALARY SLIP
+==================================================
+Slip No      : SLP-2026-09-003
+Month / Year : SEPTEMBER 2026
+--------------------------------------------------
+Employee ID  : EMP003
+Name         : Anil Kumar
+Type         : Part-Time
+Department   : Support
+--------------------------------------------------
+EARNINGS
+  Hourly Rate           :      200.00
+  Hours Worked          :         100
+  Gross Salary          :   20,000.00
+--------------------------------------------------
+DEDUCTIONS
+  Income Tax            :        0.00
+  Total Deductions      :        0.00
+--------------------------------------------------
+NET SALARY              :   20,000.00
+==================================================
+Generated on: 2026-09-24
+
+-> Salary slip successfully saved to slips/EMP003_SLP-2026-09-003.txt
+==================================================
+                  SALARY SLIP
+==================================================
+Slip No      : SLP-2026-09-004
+Month / Year : SEPTEMBER 2026
+--------------------------------------------------
+Employee ID  : EMP004
+Name         : Sunita Verma
+Type         : Part-Time
+Department   : Support
+--------------------------------------------------
+EARNINGS
+  Hourly Rate           :      250.00
+  Hours Worked          :         130
+  Gross Salary          :   33,750.00
+--------------------------------------------------
+DEDUCTIONS
+  Income Tax            :    1,687.50
+  Total Deductions      :    1,687.50
+--------------------------------------------------
+NET SALARY              :   32,062.50
+==================================================
+Generated on: 2026-09-24
+
+-> Salary slip successfully saved to slips/EMP004_SLP-2026-09-004.txt
+==================================================
+                  SALARY SLIP
+==================================================
+Slip No      : SLP-2026-09-005
+Month / Year : SEPTEMBER 2026
+--------------------------------------------------
+Employee ID  : EMP005
+Name         : Vikram Singh
+Type         : Contract
+Department   : Marketing
+--------------------------------------------------
+EARNINGS
+  Monthly Base          :   50,000.00
+  Performance Bonus     :    5,000.00
+  Gross Salary          :   55,000.00
+--------------------------------------------------
+DEDUCTIONS
+  Income Tax            :    5,500.00
+  Total Deductions      :    5,500.00
+--------------------------------------------------
+NET SALARY              :   49,500.00
+==================================================
+Generated on: 2026-09-24
+
+-> Salary slip successfully saved to slips/EMP005_SLP-2026-09-005.txt
+==================================================
+                  SALARY SLIP
+==================================================
+Slip No      : SLP-2026-09-006
+Month / Year : SEPTEMBER 2026
+--------------------------------------------------
+Employee ID  : EMP006
+Name         : Meera Desai
+Type         : Contract
+Department   : Engineering
+--------------------------------------------------
+EARNINGS
+  Monthly Base          :   50,000.00
+  Performance Bonus     :        0.00
+  Gross Salary          :   50,000.00
+--------------------------------------------------
+DEDUCTIONS
+  Income Tax            :    5,000.00
+  Total Deductions      :    5,000.00
+--------------------------------------------------
+NET SALARY              :   45,000.00
+==================================================
+Generated on: 2026-09-24
+
+-> Salary slip successfully saved to slips/EMP006_SLP-2026-09-006.txt
+==================================================
+                  SALARY SLIP
+==================================================
+Slip No      : SLP-2026-09-007
+Month / Year : SEPTEMBER 2026
+--------------------------------------------------
+Employee ID  : EMP007
+Name         : Test FT
+Type         : Full-Time
+Department   : IT
+--------------------------------------------------
+EARNINGS
+  Basic Salary          :   50,000.00
+  HRA                   :   10,000.00
+  DA                    :    5,000.00
+  Bonus                 :    5,000.00
+  Gross Salary          :   70,000.00
+--------------------------------------------------
+DEDUCTIONS
+  Provident Fund        :    6,000.00
+  Income Tax            :    7,000.00
+  Total Deductions      :   13,000.00
+--------------------------------------------------
+NET SALARY              :   57,000.00
+==================================================
+Generated on: 2026-09-24
+
+-> Salary slip successfully saved to slips/EMP007_SLP-2026-09-007.txt
+
+--- Employee Payroll Management System ---
+1. Add Employee
+2. View All Employees
+3. Search Employee by ID
+4. Update Employee
+5. Delete Employee
+6. Calculate Salary for an Employee
+7. Generate Salary Slip for an Employee
+8. Run Payroll for All Employees
+9. Reports
+10. Exit
+Enter your choice: 
+[ Reports ]
+a. Employees by type
+b. Department-wise payroll
+c. Highest paid employee
+Choose report: Highest Paid Employee: Test FT (Full-Time) Net Salary: 57000.0
+
+--- Employee Payroll Management System ---
+1. Add Employee
+2. View All Employees
+3. Search Employee by ID
+4. Update Employee
+5. Delete Employee
+6. Calculate Salary for an Employee
+7. Generate Salary Slip for an Employee
+8. Run Payroll for All Employees
+9. Reports
+10. Exit
+Enter your choice: Exiting System. Goodbye!
