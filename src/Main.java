@@ -38,53 +38,56 @@ public class Main {
         System.out.println(map);
 
         Scanner sc = new Scanner(System.in);
-        System.out.print(
-                "Create an Employee\n1 - FullTime Employee\n2- PartTime EMployee\n3 - Contract Employee\n4 - Exit\nEnter your choice: ");
-        int n = sc.nextInt();
-        int id;
-        String name;
-        List<FullTime> ftEmployees = new ArrayList<>();
-        List<PartTime> ptEmployees = new ArrayList<>();
-        List<Contract> ctEmployees = new ArrayList<>();
+        while (true) {
+            System.out.print(
+                    "Create an Employee\n1 - FullTime Employee\n2 - PartTime Employee\n3 - Contract Employee\n4 - Exit\nEnter your choice: ");
+            int n = sc.nextInt();
+            sc.nextLine();
+            int id;
+            String name;
+            List<FullTime> ftEmployees = new ArrayList<>();
+            List<PartTime> ptEmployees = new ArrayList<>();
+            List<Contract> ctEmployees = new ArrayList<>();
 
-        switch (n) {
-            case 1:
-                System.out.print("\nEnter Id: ");
-                id = sc.nextInt();
-                sc.nextLine();
-                System.out.print("\nEnter name: ");
-                name = sc.nextLine();
-                Employee e = new FullTime(id, name, map);
-                ftEmployees.add((FullTime) e);
-                System.out.println(ftEmployees);
-                break;
-            case 2:
-                System.out.print("\nEnter Id: ");
-                id = sc.nextInt();
-                sc.nextLine();
-                System.out.print("\nEnter name: ");
-                name = sc.nextLine();
-                e = new PartTime(name, id);
-                ptEmployees.add((PartTime) e);
-                System.out.println(ptEmployees);
-                break;
-            case 3:
-                System.out.print("\nEnter Id: ");
-                id = sc.nextInt();
-                sc.nextLine();
-                System.out.print("\nEnter name: ");
-                name = sc.nextLine();
-                e = new Contract(name, id);
-                ctEmployees.add((Contract) e);
-                System.out.println(ctEmployees);
-                break;
-            case 4:
-                System.exit(1);
-                break;
-            default:
-                System.out.println("Enter a valid choice.");
-                break;
+            switch (n) {
+                case 1:
+                    System.out.print("\nEnter Id: ");
+                    id = sc.nextInt();
+                    sc.nextLine();
+                    System.out.print("\nEnter name: ");
+                    name = sc.nextLine();
+                    Employee e = new FullTime(id, name, map);
+                    ftEmployees.add((FullTime) e);
+                    System.out.println(ftEmployees);
+                    break;
+                case 2:
+                    System.out.print("\nEnter Id: ");
+                    id = sc.nextInt();
+                    sc.nextLine();
+                    System.out.print("\nEnter name: ");
+                    name = sc.nextLine();
+                    e = new PartTime(name, id);
+                    ptEmployees.add((PartTime) e);
+                    System.out.println(ptEmployees);
+                    break;
+                case 3:
+                    System.out.print("\nEnter Id: ");
+                    id = sc.nextInt();
+                    sc.nextLine();
+                    System.out.print("\nEnter name: ");
+                    name = sc.nextLine();
+                    e = new Contract(name, id);
+                    ctEmployees.add((Contract) e);
+                    System.out.println(ctEmployees);
+                    break;
+                case 4:
+                    System.out.println("Goodbye!");
+                    sc.close();
+                    return;
+                default:
+                    System.out.println("Enter a valid choice.");
+                    break;
+            }
         }
-        sc.close();
     }
 }
