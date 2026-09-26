@@ -50,6 +50,7 @@ public class Main {
             sc.nextLine();
             int id;
             String name;
+            int salary;
 
             switch (n) {
                 case 1:
@@ -58,7 +59,10 @@ public class Main {
                     sc.nextLine();
                     System.out.print("\nEnter name: ");
                     name = sc.nextLine();
+                    System.out.print("\nEnter Salary: ");
+                    salary = sc.nextInt();
                     Employee e = new FullTime(id, name, map);
+                    e.setSalary(salary);
                     ftEmployees.add((FullTime) e);
                     System.out.println(ftEmployees);
                     break;
@@ -68,7 +72,10 @@ public class Main {
                     sc.nextLine();
                     System.out.print("\nEnter name: ");
                     name = sc.nextLine();
+                    System.out.print("\nEnter Salary: ");
+                    salary = sc.nextInt();
                     e = new PartTime(name, id);
+                    e.setSalary(salary);
                     ptEmployees.add((PartTime) e);
                     System.out.println(ptEmployees);
                     break;
@@ -78,7 +85,10 @@ public class Main {
                     sc.nextLine();
                     System.out.print("\nEnter name: ");
                     name = sc.nextLine();
+                    System.out.print("\nEnter Salary: ");
+                    salary = sc.nextInt();
                     e = new Contract(name, id);
+                    e.setSalary(salary);
                     ctEmployees.add((Contract) e);
                     System.out.println(ctEmployees);
                     break;
