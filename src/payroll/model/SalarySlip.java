@@ -10,6 +10,7 @@ public class SalarySlip {
     private String monthYear;
     private double grossSalary;
     private double tax;
+    @SuppressWarnings("unused")
     private double otherDeductions;
     private double netSalary;
     private LocalDate generatedDate;
