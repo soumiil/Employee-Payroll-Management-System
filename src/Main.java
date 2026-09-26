@@ -4,8 +4,8 @@ import java.util.*;
 
 interface Employee {
     int getSalary();
-
     void setSalary(int salary);
+    void getSalarySlip();
 }
 
 class FullTime implements Employee {
@@ -28,7 +28,8 @@ class FullTime implements Employee {
         this.salary = salary;
     }
 
-    void getSalarySlip() {
+    @Override 
+    public void getSalarySlip() {
         try {
             FileWriter fw = new FileWriter("D:\\" + name + "SalarySlip.txt");
             fw.write("Your Salary : " + salary);
@@ -100,7 +101,8 @@ class Contract implements Employee {
         this.salary = salary;
     }
 
-    void getSalarySlip() {
+    @Override 
+    public void getSalarySlip() {
         try {
             FileWriter fw = new FileWriter("D:\\" + name + "contractSalarySlip.txt");
             fw.write("Your Salary : " + salary);
@@ -165,7 +167,8 @@ class PartTime implements Employee {
         this.salary = salary;
     }
 
-    void getSalarySlip() {
+    @Override 
+    public void getSalarySlip() {
         try {
             FileWriter fw = new FileWriter("D:\\" + name + "PartimeSalarySlip.txt");
             fw.write("Your Salary : " + salary);
