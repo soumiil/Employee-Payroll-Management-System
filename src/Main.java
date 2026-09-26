@@ -1,219 +1,4 @@
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.*;
-
-interface Employee {
-    int getSalary();
-    void setSalary(int salary);
-    void getSalarySlip();
-}
-
-class FullTime implements Employee {
-    int salary;
-    Integer id;
-    String name;
-
-    FullTime(Integer id, String name, HashMap<Integer, FullTime> map) {
-        this.name = name;
-        map.put(id, this);
-    }
-
-    @Override
-    public int getSalary() {
-        return salary;
-    }
-
-    @Override
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
-    @Override 
-    public void getSalarySlip() {
-        try {
-            FileWriter fw = new FileWriter("D:\\" + name + "SalarySlip.txt");
-            fw.write("Your Salary : " + salary);
-            fw.close();
-            System.out.println("salary slip generated");
-        } catch (IOException e) {
-            System.out.println(e);
-
-        }
-
-    }
-
-    @Override
-    public String toString() {
-        return "FullTime [salary=" + salary + ", id=" + id + ", name=" + name + "]";
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + salary;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((name == null) ? 0 : name.hashCode());
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        FullTime other = (FullTime) obj;
-        if (salary != other.salary)
-            return false;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
-            return false;
-        return true;
-    }
-
-}
-
-class Contract implements Employee {
-    int salary;
-    String name;
-
-    Contract(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public int getSalary() {
-        return salary;
-    }
-
-    @Override
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
-    @Override 
-    public void getSalarySlip() {
-        try {
-            FileWriter fw = new FileWriter("D:\\" + name + "contractSalarySlip.txt");
-            fw.write("Your Salary : " + salary);
-            fw.close();
-            System.out.println("salary slip generated");
-        } catch (IOException e) {
-            System.out.println(e);
-
-        }
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + salary;
-        result = prime * result + ((name == null) ? 0 : name.hashCode());
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Contract other = (Contract) obj;
-        if (salary != other.salary)
-            return false;
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
-            return false;
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Contract [salary=" + salary + ", name=" + name + "]";
-    }
-
-}
-
-class PartTime implements Employee {
-    int salary = 20000;
-    String name;
-
-    PartTime(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public int getSalary() {
-        return salary;
-    }
-
-    @Override
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
-    @Override 
-    public void getSalarySlip() {
-        try {
-            FileWriter fw = new FileWriter("D:\\" + name + "PartimeSalarySlip.txt");
-            fw.write("Your Salary : " + salary);
-            fw.close();
-            System.out.println("salary slip generated");
-        } catch (IOException e) {
-            System.out.println(e);
-
-        }
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + salary;
-        result = prime * result + ((name == null) ? 0 : name.hashCode());
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        PartTime other = (PartTime) obj;
-        if (salary != other.salary)
-            return false;
-        if (name == null) {
-            if (other.name != null)
-                return false;
-        } else if (!name.equals(other.name))
-            return false;
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "PartTime [salary=" + salary + ", name=" + name + "]";
-    }
-
-}
 
 public class Main {
     public static void main(String[] args) {
@@ -226,17 +11,17 @@ public class Main {
         obj.getSalarySlip();
 
         // PARTTIME EMPLOYEES
-        PartTime pt1 = new PartTime("shiva");
+        PartTime pt1 = new PartTime("shiva", 2000);
         pt1.setSalary(2000);
         System.out.println("your salary is : " + pt1.getSalary());
         pt1.getSalarySlip();
 
-        PartTime pt2 = new PartTime("SOUMIL");
+        PartTime pt2 = new PartTime("SOUMIL", 1000);
         pt2.setSalary(2000);
         System.out.println("your salary is : " + pt2.getSalary());
         pt2.getSalarySlip();
 
-        PartTime pt3 = new PartTime("PALAK ");
+        PartTime pt3 = new PartTime("PALAK", 100);
         pt3.setSalary(2000);
         System.out.println("your salary is : " + pt3.getSalary());
         pt3.getSalarySlip();
@@ -245,12 +30,61 @@ public class Main {
         System.out.println("PartTime Employees: " + partTimeEmployees);
 
         // CONTRACT EMPLOYEES
-        Contract obj4 = new Contract("aditya");
+        Contract obj4 = new Contract("aditya", 100);
         obj4.setSalary(2000);
         System.out.println("your salary is : " + obj4.getSalary());
         obj4.getSalarySlip();
 
         System.out.println(map);
 
+        Scanner sc = new Scanner(System.in);
+        System.out.print(
+                "Create an Employee\n1 - FullTime Employee\n2- PartTime EMployee\n3 - Contract Employee\n4 - Exit\nEnter your choice: ");
+        int n = sc.nextInt();
+        int id;
+        String name;
+        List<FullTime> ftEmployees = new ArrayList<>();
+        List<PartTime> ptEmployees = new ArrayList<>();
+        List<Contract> ctEmployees = new ArrayList<>();
+
+        switch (n) {
+            case 1:
+                System.out.print("\nEnter Id: ");
+                id = sc.nextInt();
+                sc.nextLine();
+                System.out.print("\nEnter name: ");
+                name = sc.nextLine();
+                Employee e = new FullTime(id, name, map);
+                ftEmployees.add((FullTime) e);
+                System.out.println(ftEmployees);
+                break;
+            case 2:
+                System.out.print("\nEnter Id: ");
+                id = sc.nextInt();
+                sc.nextLine();
+                System.out.print("\nEnter name: ");
+                name = sc.nextLine();
+                e = new PartTime(name, id);
+                ptEmployees.add((PartTime) e);
+                System.out.println(ptEmployees);
+                break;
+            case 3:
+                System.out.print("\nEnter Id: ");
+                id = sc.nextInt();
+                sc.nextLine();
+                System.out.print("\nEnter name: ");
+                name = sc.nextLine();
+                e = new Contract(name, id);
+                ctEmployees.add((Contract) e);
+                System.out.println(ctEmployees);
+                break;
+            case 4:
+                System.exit(1);
+                break;
+            default:
+                System.out.println("Enter a valid choice.");
+                break;
+        }
+        sc.close();
     }
 }
