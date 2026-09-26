@@ -30,7 +30,7 @@ class FullTime implements Employee {
 
     void getSalarySlip() {
         try {
-            FileWriter fw = new FileWriter("D:\\$(name)SalarySlip.txt");
+            FileWriter fw = new FileWriter("D:\\" + name + "SalarySlip.txt");
             fw.write("Your Salary : " + salary);
             fw.close();
             System.out.println("salary slip generated");
@@ -102,7 +102,7 @@ class Contract implements Employee {
 
     void getSalarySlip() {
         try {
-            FileWriter fw = new FileWriter("D:\\$(name)contractSalarySlip.txt");
+            FileWriter fw = new FileWriter("D:\\" + name + "contractSalarySlip.txt");
             fw.write("Your Salary : " + salary);
             fw.close();
             System.out.println("salary slip generated");
@@ -145,8 +145,6 @@ class Contract implements Employee {
         return "Contract [salary=" + salary + ", name=" + name + "]";
     }
 
-    
-
 }
 
 class PartTime implements Employee {
@@ -169,7 +167,7 @@ class PartTime implements Employee {
 
     void getSalarySlip() {
         try {
-            FileWriter fw = new FileWriter("D:\\PartimeSalarySlip.txt");
+            FileWriter fw = new FileWriter("D:\\" + name + "PartimeSalarySlip.txt");
             fw.write("Your Salary : " + salary);
             fw.close();
             System.out.println("salary slip generated");
@@ -211,8 +209,6 @@ class PartTime implements Employee {
     public String toString() {
         return "PartTime [salary=" + salary + ", name=" + name + "]";
     }
-
-    
 
 }
 
