@@ -8,9 +8,7 @@ import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Service class to handle payroll processing using generic methods.
- */
+
 public class PayrollProcessor {
 
     /**
