@@ -7,6 +7,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -34,14 +35,11 @@ public class GenericUtils {
      */
     public static <T extends Employee> T max(List<T> list, Comparator<T> comp) {
         if (list == null || list.isEmpty()) return null;
-        T maxItem = list.get(0);
-        for (int i = 1; i < list.size(); i++) {
-            if (comp.compare(list.get(i), maxItem) > 0) {
-                maxItem = list.get(i);
-            }
-        }
         
-        return maxItem;
+        /* updation by Soumil Agarwal - employee filtering using a stream */
+        Optional<T> maxItem = list.stream().max(comp);
+        
+        return maxItem.get();
     }
 
     /**
