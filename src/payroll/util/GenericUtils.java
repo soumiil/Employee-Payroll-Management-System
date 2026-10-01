@@ -34,12 +34,9 @@ public class GenericUtils {
      * inheriting multiple parametrizations of Comparable causes type erasure conflicts in Java.
      */
     public static <T extends Employee> T max(List<T> list, Comparator<T> comp) {
-        if (list == null || list.isEmpty()) return null;
-        
         /* updation by Soumil Agarwal - employee filtering using a stream */
         Optional<T> maxItem = list.stream().max(comp);
-        
-        return maxItem.get();
+        return maxItem.orElse(null);
     }
 
     /**
