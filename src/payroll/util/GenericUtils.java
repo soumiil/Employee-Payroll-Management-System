@@ -23,20 +23,24 @@ public class GenericUtils {
      */
     public static <T extends Employee> List<T> filter(List<T> list, Predicate<T> condition) {
         /* updation by Soumil Agarwal - employee filtering using a stream */
-        List<T> result = list.stream().filter(condition).collect(Collectors.toList());
-        return result;
+        return list.stream()
+                .filter(condition)
+                .collect(Collectors.toList());
     }
 
     /**
      * Concept: Generic Method with Comparator
      * Finds the maximum element in a list based on a provided Comparator.
-     * Documenting: Chosen the Comparator version over `<T extends Employee & Comparable<T>>` because 
-     * inheriting multiple parametrizations of Comparable causes type erasure conflicts in Java.
+     * Documenting: Chosen the Comparator version over `<T extends Employee &
+     * Comparable<T>>` because
+     * inheriting multiple parametrizations of Comparable causes type erasure
+     * conflicts in Java.
      */
     public static <T extends Employee> T max(List<T> list, Comparator<T> comp) {
         /* updation by Soumil Agarwal - employee filtering using a stream */
-        Optional<T> maxItem = list.stream().max(comp);
-        return maxItem.orElse(null);
+        return list.stream()
+                .max(comp)
+                .orElse(null);
     }
 
     /**
