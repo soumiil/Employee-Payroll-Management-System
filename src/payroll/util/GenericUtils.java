@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -19,8 +18,7 @@ public class GenericUtils {
      * Concept: Generic Method with Bounded Type
      * Filters a list based on a condition.
      */
-    public static <T extends Employee> List<T> filter(List<T> list, Predicate<T> condition) {
-        /* updation by Soumil Agarwal - employee filtering using a stream */
+    public static List<Employee> filter(List<? extends Employee> list, Predicate<Employee> condition) {
         return list.stream()
                 .filter(condition)
                 .collect(Collectors.toList());
@@ -34,32 +32,19 @@ public class GenericUtils {
      * inheriting multiple parametrizations of Comparable causes type erasure
      * conflicts in Java.
      */
-    public static <T extends Employee> T max(List<T> list, Comparator<T> comp) {
-        /* updation by Soumil Agarwal - employee filtering using a stream */
+    public static Employee max(List<? extends Employee> list, Comparator<Employee> comp) {
         return list.stream()
                 .max(comp)
                 .orElse(null);
     }
 
     /**
-     * Concept: Generic Method with multiple type parameters
-     * Maps elements of type T to type R.
-     */
-    public static <T, R> List<R> mapAll(List<T> list, Function<T, R> mapper) {
-        List<R> result = new ArrayList<>();
-        for (T item : list) {
-            result.add(mapper.apply(item));
-        }
-        return result;
-    }
-
-    /**
      * Concept: Generic Method with Map and List aggregation
      * Groups employees by their department.
      */
-    public static <T extends Employee> Map<String, List<T>> groupByDepartment(List<T> list) {
-        Map<String, List<T>> map = new HashMap<>();
-        for (T emp : list) {
+    public static Map<String, List<Employee>> groupByDepartment(List<? extends Employee> list) {
+        Map<String, List<Employee>> map = new HashMap<>();
+        for (Employee emp : list) {
             map.putIfAbsent(emp.getDepartment(), new ArrayList<>());
             map.get(emp.getDepartment()).add(emp);
         }
