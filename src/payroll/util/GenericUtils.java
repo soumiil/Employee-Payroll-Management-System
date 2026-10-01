@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * Reusable generic utilities for collections.
@@ -20,16 +21,8 @@ public class GenericUtils {
      * Filters a list based on a condition.
      */
     public static <T extends Employee> List<T> filter(List<T> list, Predicate<T> condition) {
-        // List<T> result = new ArrayList<>();
-        // for (T item : list) {
-        //     if (condition.test(item)) {
-        //         result.add(item);
-        //     }
-        // }
-        // return result;
-
-        // updation by Soumil Agarwal
-        List<T> result = list.stream().filter(condition).toList();
+        /* updation by Soumil Agarwal - employee filtering using a stream */
+        List<T> result = list.stream().filter(condition).collect(Collectors.toList());
         return result;
     }
 
@@ -47,6 +40,7 @@ public class GenericUtils {
                 maxItem = list.get(i);
             }
         }
+        
         return maxItem;
     }
 
